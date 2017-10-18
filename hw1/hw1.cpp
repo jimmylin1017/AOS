@@ -51,8 +51,8 @@ int memory_dirty[MEM_REFER];
 /* Random: Arbitrarily pick one number for each reference. */
 void create_random_reference_string()
 {
-    memset(memory_reference, 0, MEM_REFER);
-    memset(memory_dirty, 0, MEM_REFER);
+    memset(memory_reference, 0, sizeof(memory_reference));
+    memset(memory_dirty, 0, sizeof(memory_dirty));
 
     // reference string: 1~350
     for(int i=0; i<MEM_REFER; i++)
@@ -67,8 +67,8 @@ void create_locality_reference_string()
 {
     int base_num = 1;
 
-    memset(memory_reference, 0, MEM_REFER);
-    memset(memory_dirty, 0, MEM_REFER);
+    memset(memory_reference, 0, sizeof(memory_reference));
+    memset(memory_dirty, 0, sizeof(memory_dirty));
 
     // reference string: 1~350
     for(int i=0; i<MEM_REFER; i++)
@@ -158,13 +158,115 @@ void fifo_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"interrupt_counter: "<<interrupt_counter<<endl;
+    cout<<"interrupt_counter: "<<interrupt_counter<<" ("<<(double)interrupt_counter/MEM_REFER<<")"<<endl;
     cout<<"write_back_counter: "<<write_back_counter<<endl;
 }
 
 void optimal_algorithm(int memory_size)
 {
+    cout<<"memory_size: "<<memory_size<<endl;
 
+    vector<MemoryFrame> memory_frames;
+
+    int interrupt_counter = 0;
+    int write_back_counter = 0;
+    int page_fault = 1;
+    int replace_index = -1;
+
+    int find_future[memory_size] = {0};
+    int find_future_counter = 0;
+    
+    for(int i=0; i<MEM_REFER; i++)
+    {
+        page_fault = 1;
+        replace_index = -1;
+
+        memset(find_future, 0, sizeof(find_future));
+        find_future_counter = 0;
+
+        // find data in memory frames
+        for(int j=0; j<memory_frames.size(); j++)
+        {
+            if(memory_frames[j].data == memory_reference[i])
+            {
+                page_fault = 0;
+                break;
+            }
+        }
+
+        if(page_fault == 0)
+        {
+            //cout<<"Find: "<<memory_reference[i]<<'\n';
+            continue;
+        }
+
+        // check if memory frames is full
+        if(memory_frames.size() == memory_size)
+        {
+            // find future data
+            for(int j=i+1; j<MEM_REFER; j++)
+            {
+                for(int k=0; k<memory_frames.size(); k++)
+                {
+                    if((memory_reference[j] == memory_frames[k].data) && !find_future[k])
+                    {
+                        find_future[k] = 1;
+                        find_future_counter++;
+                        //cout<<memory_frames[k].data<<endl;
+                    }
+                }
+
+                if(find_future_counter == (memory_size - 1))
+                {
+                    break;
+                }
+            }
+
+            // choose replace index
+            for(int j=0; j<memory_frames.size(); j++)
+            {
+                //cout<<" "<<find_future[j];
+                if(find_future[j] == 0)
+                {
+                    replace_index = j;
+                    //cout<<"Replace: "<<replace_index<<'\n';
+                    break;
+                }
+            }
+
+
+            // check if write back
+            if(memory_frames[replace_index].dirty)
+            {
+                //cout<<"write back: "<<memory_frames[replace_index].data<<endl;
+                interrupt_counter++;
+                write_back_counter++;
+            }
+
+            // memory frames full then erase first data
+            memory_frames.erase(memory_frames.begin()+replace_index);
+        }
+
+        // add new data to memory frames
+        MemoryFrame temp;
+        temp.data = memory_reference[i];
+        temp.reference = 1;
+        temp.dirty = memory_dirty[i];
+
+        memory_frames.push_back(temp);
+        interrupt_counter++;
+
+        // print out current memory frames status
+        /*for(int j=0; j<memory_frames.size(); j++)
+        {
+            cout<<" "<<memory_frames[j].data<<" ("<<memory_frames[j].reference<<", "<<memory_frames[j].dirty<<")";
+        }
+
+        cout<<"\n========================\n";*/
+    }
+
+    cout<<"interrupt_counter: "<<interrupt_counter<<" ("<<(double)interrupt_counter/MEM_REFER<<")"<<endl;
+    cout<<"write_back_counter: "<<write_back_counter<<endl;
 }
 
 void enhanced_second_chance_algorithm(int memory_size)
@@ -272,7 +374,7 @@ void enhanced_second_chance_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"interrupt_counter: "<<interrupt_counter<<endl;
+    cout<<"interrupt_counter: "<<interrupt_counter<<" ("<<(double)interrupt_counter/MEM_REFER<<")"<<endl;
     cout<<"write_back_counter: "<<write_back_counter<<endl;
 }
 
@@ -299,6 +401,11 @@ int main()
     {
         enhanced_second_chance_algorithm(i);
     }
+    cout<<"\n=====optimal_algorithm====="<<endl;
+    for(int i=10; i<=70; i+=10)
+    {
+        optimal_algorithm(i);
+    }
     
     // running locality reference string
     create_locality_reference_string();
@@ -313,11 +420,21 @@ int main()
     {
         enhanced_second_chance_algorithm(i);
     }
+    cout<<"\n=====optimal_algorithm====="<<endl;
+    for(int i=10; i<=70; i+=10)
+    {
+        optimal_algorithm(i);
+    }
+
 
     // print out reference string
-    /*for(int i=0; i<MEM_REFER; i++)
+    /*create_random_reference_string();
+    for(int i=0; i<MEM_REFER; i++)
         cout<<memory_reference[i]<<" ";
-    cout<<'\n';*/
+    cout<<'\n';
+    optimal_algorithm(5);*/
+
+
 
     return 0;
 }
