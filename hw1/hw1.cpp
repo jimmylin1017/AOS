@@ -104,6 +104,7 @@ void fifo_algorithm(int memory_size)
 
     int interrupt_counter = 0;
     int write_back_counter = 0;
+    int page_fault_counter = 0;
     int page_fault = 1;
     
     for(int i=0; i<MEM_REFER; i++)
@@ -125,6 +126,8 @@ void fifo_algorithm(int memory_size)
             //cout<<"Find: "<<memory_reference[i]<<'\n';
             continue;
         }
+
+        page_fault_counter++;
 
         // check if memory frames is full
         if(memory_frames.size() == memory_size)
@@ -158,7 +161,8 @@ void fifo_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"interrupt_counter: "<<interrupt_counter<<" ("<<(double)interrupt_counter/MEM_REFER<<")"<<endl;
+    cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+    cout<<"interrupt_counter: "<<interrupt_counter<<endl;
     cout<<"write_back_counter: "<<write_back_counter<<endl;
 }
 
@@ -170,6 +174,7 @@ void optimal_algorithm(int memory_size)
 
     int interrupt_counter = 0;
     int write_back_counter = 0;
+    int page_fault_counter = 0;
     int page_fault = 1;
     int replace_index = -1;
 
@@ -199,6 +204,8 @@ void optimal_algorithm(int memory_size)
             //cout<<"Find: "<<memory_reference[i]<<'\n';
             continue;
         }
+
+        page_fault_counter++;
 
         // check if memory frames is full
         if(memory_frames.size() == memory_size)
@@ -265,7 +272,8 @@ void optimal_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"interrupt_counter: "<<interrupt_counter<<" ("<<(double)interrupt_counter/MEM_REFER<<")"<<endl;
+    cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+    cout<<"interrupt_counter: "<<interrupt_counter<<endl;
     cout<<"write_back_counter: "<<write_back_counter<<endl;
 }
 
@@ -277,6 +285,7 @@ void enhanced_second_chance_algorithm(int memory_size)
 
     int interrupt_counter = 0;
     int write_back_counter = 0;
+    int page_fault_counter = 0;
     int page_fault = 1;
     int replace_index = -1;
     
@@ -301,6 +310,8 @@ void enhanced_second_chance_algorithm(int memory_size)
             //cout<<"Find: "<<memory_reference[i]<<'\n';
             continue;
         }
+
+        page_fault_counter++;
 
         // check if memory frames is full
         if(memory_frames.size() == memory_size)
@@ -374,7 +385,8 @@ void enhanced_second_chance_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"interrupt_counter: "<<interrupt_counter<<" ("<<(double)interrupt_counter/MEM_REFER<<")"<<endl;
+    cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+    cout<<"interrupt_counter: "<<interrupt_counter<<endl;
     cout<<"write_back_counter: "<<write_back_counter<<endl;
 }
 
