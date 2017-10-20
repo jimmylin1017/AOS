@@ -86,7 +86,18 @@ void create_locality_reference_string()
 
 void create_own_reference_string()
 {
-    
+    memset(memory_reference, 0, sizeof(memory_reference));
+    memset(memory_dirty, 0, sizeof(memory_dirty));
+
+    int reference_counter = 0;
+
+    // reference string: 1~350
+    for(int i=0; i<MEM_REFER; i++)
+    {
+        memory_reference[i] = (reference_counter) % REFER_STR + 1;
+        memory_dirty[i] = random() / 7 % 2;
+        reference_counter++;
+    }
 }
 
 /*
@@ -135,7 +146,6 @@ void fifo_algorithm(int memory_size)
             if(memory_frames[0].dirty)
             {
                 //cout<<"write back: "<<memory_frames[0].data<<endl;
-                interrupt_counter++;
                 write_back_counter++;
             }
 
@@ -246,7 +256,6 @@ void optimal_algorithm(int memory_size)
             if(memory_frames[replace_index].dirty)
             {
                 //cout<<"write back: "<<memory_frames[replace_index].data<<endl;
-                interrupt_counter++;
                 write_back_counter++;
             }
 
@@ -359,7 +368,6 @@ void enhanced_second_chance_algorithm(int memory_size)
             if(memory_frames[replace_index].dirty)
             {
                 //cout<<"write back: "<<memory_frames[replace_index].data<<endl;
-                interrupt_counter++;
                 write_back_counter++;
             }
 
@@ -438,6 +446,24 @@ int main()
         optimal_algorithm(i);
     }
 
+    // running own reference string
+    create_own_reference_string();
+    cout<<"\n=====create_own_reference_string====="<<endl;
+    cout<<"\n=====fifo_algorithm====="<<endl;
+    for(int i=10; i<=70; i+=10)
+    {
+        fifo_algorithm(i);
+    }
+    cout<<"\n=====enhanced_second_chance_algorithm====="<<endl;
+    for(int i=10; i<=70; i+=10)
+    {
+        enhanced_second_chance_algorithm(i);
+    }
+    cout<<"\n=====optimal_algorithm====="<<endl;
+    for(int i=10; i<=70; i+=10)
+    {
+        optimal_algorithm(i);
+    }
 
     // print out reference string
     /*create_random_reference_string();
