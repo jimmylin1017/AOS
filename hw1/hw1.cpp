@@ -38,6 +38,16 @@ reference string in the report.
 #define LOCAL_LEN 10 // for number of memory references, ex: MEM_REFER / LOCAL_LEN
 */
 
+struct PrintInfo
+{
+    int page_fault_counter;
+    int interrupt_counter;
+    int write_back_counter;
+    string title;
+};
+
+vector<PrintInfo> print_info[8];
+
 struct MemoryFrame
 {
     int data;
@@ -109,7 +119,7 @@ void create_own_reference_string()
 /* FIFO algorithm, interrupt count with write back and page fault */
 void fifo_algorithm(int memory_size)
 {
-    cout<<"memory_size: "<<memory_size<<endl;
+    //cout<<"memory_size: "<<memory_size<<endl;
 
     vector<MemoryFrame> memory_frames;
 
@@ -178,14 +188,21 @@ void fifo_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+    /*cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
     cout<<"interrupt_counter: "<<interrupt_counter<<endl;
-    cout<<"write_back_counter: "<<write_back_counter<<endl;
+    cout<<"write_back_counter: "<<write_back_counter<<endl;*/
+
+    PrintInfo p;
+    p.page_fault_counter = page_fault_counter;
+    p.interrupt_counter = interrupt_counter;
+    p.write_back_counter = write_back_counter;
+    p.title = "\n=====fifo_algorithm=====";
+    print_info[memory_size/10].push_back(p);
 }
 
 void optimal_algorithm(int memory_size)
 {
-    cout<<"memory_size: "<<memory_size<<endl;
+    //cout<<"memory_size: "<<memory_size<<endl;
 
     vector<MemoryFrame> memory_frames;
 
@@ -286,13 +303,20 @@ void optimal_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
-    cout<<"write_back_counter: "<<write_back_counter<<endl;
+    /*cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+    cout<<"write_back_counter: "<<write_back_counter<<endl;*/
+
+    PrintInfo p;
+    p.page_fault_counter = page_fault_counter;
+    p.interrupt_counter = 0;
+    p.write_back_counter = write_back_counter;
+    p.title = "\n=====optimal_algorithm=====";
+    print_info[memory_size/10].push_back(p);
 }
 
 void enhanced_second_chance_algorithm(int memory_size)
 {
-    cout<<"memory_size: "<<memory_size<<endl;
+    //cout<<"memory_size: "<<memory_size<<endl;
 
     vector<MemoryFrame> memory_frames;
 
@@ -398,14 +422,21 @@ void enhanced_second_chance_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+    /*cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
     cout<<"interrupt_counter: "<<interrupt_counter<<endl;
-    cout<<"write_back_counter: "<<write_back_counter<<endl;
+    cout<<"write_back_counter: "<<write_back_counter<<endl;*/
+
+    PrintInfo p;
+    p.page_fault_counter = page_fault_counter;
+    p.interrupt_counter = interrupt_counter;
+    p.write_back_counter = write_back_counter;
+    p.title = "\n=====enhanced_second_chance_algorithm=====";
+    print_info[memory_size/10].push_back(p);
 }
 
 void own_algorithm(int memory_size)
 {
-    cout<<"memory_size: "<<memory_size<<endl;
+    //cout<<"memory_size: "<<memory_size<<endl;
 
     vector<MemoryFrame> memory_frames;
 
@@ -515,9 +546,16 @@ void own_algorithm(int memory_size)
         cout<<"\n========================\n";*/
     }
 
-    cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+    /*cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
     cout<<"interrupt_counter: "<<interrupt_counter<<endl;
-    cout<<"write_back_counter: "<<write_back_counter<<endl;
+    cout<<"write_back_counter: "<<write_back_counter<<endl;*/
+
+    PrintInfo p;
+    p.page_fault_counter = page_fault_counter;
+    p.interrupt_counter = interrupt_counter;
+    p.write_back_counter = write_back_counter;
+    p.title = "\n=====own_algorithm=====";
+    print_info[memory_size/10].push_back(p);
 }
 
 int main()
@@ -526,75 +564,105 @@ int main()
     srand (time(NULL));
 
     // running random reference string
+    for(int i=0; i<=7; i++)
+        print_info[i].clear();
     create_random_reference_string();
     cout<<"=====create_random_reference_string====="<<endl;
-    cout<<"\n=====fifo_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
+    // running algorithm
+    for(int i=1; i<=7; i++)
     {
-        fifo_algorithm(i);
+        fifo_algorithm(i*10);
+        own_algorithm(i*10);
+        enhanced_second_chance_algorithm(i*10);
+        optimal_algorithm(i*10);
     }
-    cout<<"\n=====own_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
+    // print infomation
+    for(int i=1; i<=7; i++)
     {
-        own_algorithm(i);
+        cout<<"\n===================="<<endl;
+        cout<<"memory_size: "<<i*10<<endl;
+        cout<<"===================="<<endl;
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int page_fault_counter = print_info[i][j].page_fault_counter;
+            int interrupt_counter = print_info[i][j].interrupt_counter;
+            int write_back_counter = print_info[i][j].write_back_counter;
+            string title = print_info[i][j].title;
+
+            cout<<title<<endl;
+            cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+            cout<<"interrupt_counter: "<<interrupt_counter<<endl;
+            cout<<"write_back_counter: "<<write_back_counter<<endl;
+        }
     }
-    cout<<"\n=====enhanced_second_chance_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
-    {
-        enhanced_second_chance_algorithm(i);
-    }
-    cout<<"\n=====optimal_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
-    {
-        optimal_algorithm(i);
-    }
-    
+
     // running locality reference string
+    for(int i=0; i<=7; i++)
+        print_info[i].clear();
     create_locality_reference_string();
     cout<<"\n=====create_locality_reference_string====="<<endl;
-    cout<<"\n=====fifo_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
+    // running algorithm
+    for(int i=1; i<=7; i++)
     {
-        fifo_algorithm(i);
+        fifo_algorithm(i*10);
+        own_algorithm(i*10);
+        enhanced_second_chance_algorithm(i*10);
+        optimal_algorithm(i*10);
     }
-    cout<<"\n=====own_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
+    // print infomation
+    for(int i=1; i<=7; i++)
     {
-        own_algorithm(i);
-    }
-    cout<<"\n=====enhanced_second_chance_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
-    {
-        enhanced_second_chance_algorithm(i);
-    }
-    cout<<"\n=====optimal_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
-    {
-        optimal_algorithm(i);
+        cout<<"\n===================="<<endl;
+        cout<<"memory_size: "<<i*10<<endl;
+        cout<<"===================="<<endl;
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int page_fault_counter = print_info[i][j].page_fault_counter;
+            int interrupt_counter = print_info[i][j].interrupt_counter;
+            int write_back_counter = print_info[i][j].write_back_counter;
+            string title = print_info[i][j].title;
+
+            cout<<title<<endl;
+            cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+            cout<<"interrupt_counter: "<<interrupt_counter<<endl;
+            cout<<"write_back_counter: "<<write_back_counter<<endl;
+        }
     }
 
     // running own reference string
+    for(int i=0; i<=7; i++)
+        print_info[i].clear();
     create_own_reference_string();
     cout<<"\n=====create_own_reference_string====="<<endl;
-    cout<<"\n=====fifo_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
+    // running algorithm
+    for(int i=1; i<=7; i++)
     {
-        fifo_algorithm(i);
+        fifo_algorithm(i*10);
+        own_algorithm(i*10);
+        enhanced_second_chance_algorithm(i*10);
+        optimal_algorithm(i*10);
     }
-    cout<<"\n=====own_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
+    // print infomation
+    for(int i=1; i<=7; i++)
     {
-        own_algorithm(i);
-    }
-    cout<<"\n=====enhanced_second_chance_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
-    {
-        enhanced_second_chance_algorithm(i);
-    }
-    cout<<"\n=====optimal_algorithm====="<<endl;
-    for(int i=10; i<=70; i+=10)
-    {
-        optimal_algorithm(i);
+        cout<<"\n===================="<<endl;
+        cout<<"memory_size: "<<i*10<<endl;
+        cout<<"===================="<<endl;
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int page_fault_counter = print_info[i][j].page_fault_counter;
+            int interrupt_counter = print_info[i][j].interrupt_counter;
+            int write_back_counter = print_info[i][j].write_back_counter;
+            string title = print_info[i][j].title;
+
+            cout<<title<<endl;
+            cout<<"page_fault_counter: "<<page_fault_counter<<" ("<<(double)page_fault_counter/MEM_REFER<<")"<<endl;
+            cout<<"interrupt_counter: "<<interrupt_counter<<endl;
+            cout<<"write_back_counter: "<<write_back_counter<<endl;
+        }
     }
 
     // print out reference string

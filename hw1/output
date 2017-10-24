@@ -1,344 +1,509 @@
 =====create_random_reference_string=====
 
-=====fifo_algorithm=====
+====================
 memory_size: 10
-page_fault_counter: 68057 (0.972243)
-interrupt_counter: 69965
-write_back_counter: 33955
-memory_size: 20
-page_fault_counter: 66110 (0.944429)
-interrupt_counter: 69888
-write_back_counter: 32991
-memory_size: 30
-page_fault_counter: 64102 (0.915743)
-interrupt_counter: 69739
-write_back_counter: 31952
-memory_size: 40
-page_fault_counter: 62165 (0.888071)
-interrupt_counter: 69537
-write_back_counter: 30974
-memory_size: 50
-page_fault_counter: 60160 (0.859429)
-interrupt_counter: 69229
-write_back_counter: 29963
-memory_size: 60
-page_fault_counter: 58188 (0.831257)
-interrupt_counter: 68856
-write_back_counter: 28985
-memory_size: 70
-page_fault_counter: 56166 (0.802371)
-interrupt_counter: 68359
-write_back_counter: 27971
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 68002 (0.971457)
+interrupt_counter: 69962
+write_back_counter: 33971
 
 =====own_algorithm=====
-memory_size: 10
-page_fault_counter: 68091 (0.972729)
-interrupt_counter: 137011
-write_back_counter: 33768
-memory_size: 20
-page_fault_counter: 66077 (0.943957)
-interrupt_counter: 133818
-write_back_counter: 32551
-memory_size: 30
-page_fault_counter: 64080 (0.915429)
-interrupt_counter: 130579
-write_back_counter: 31363
-memory_size: 40
-page_fault_counter: 62141 (0.887729)
-interrupt_counter: 127353
-write_back_counter: 30207
-memory_size: 50
-page_fault_counter: 60146 (0.859229)
-interrupt_counter: 123969
-write_back_counter: 29083
-memory_size: 60
-page_fault_counter: 58245 (0.832071)
-interrupt_counter: 120567
-write_back_counter: 28054
-memory_size: 70
-page_fault_counter: 56197 (0.802814)
-interrupt_counter: 116886
-write_back_counter: 26943
+page_fault_counter: 68015 (0.971643)
+interrupt_counter: 136901
+write_back_counter: 33746
 
 =====enhanced_second_chance_algorithm=====
-memory_size: 10
-page_fault_counter: 68056 (0.972229)
-interrupt_counter: 136972
-write_back_counter: 33739
-memory_size: 20
-page_fault_counter: 66067 (0.943814)
-interrupt_counter: 133958
-write_back_counter: 32515
-memory_size: 30
-page_fault_counter: 64081 (0.915443)
-interrupt_counter: 130893
-write_back_counter: 31294
-memory_size: 40
-page_fault_counter: 62099 (0.887129)
-interrupt_counter: 127897
-write_back_counter: 30103
-memory_size: 50
-page_fault_counter: 60167 (0.859529)
-interrupt_counter: 124797
-write_back_counter: 28962
-memory_size: 60
-page_fault_counter: 58224 (0.831771)
-interrupt_counter: 121775
-write_back_counter: 27814
-memory_size: 70
-page_fault_counter: 56165 (0.802357)
-interrupt_counter: 118487
-write_back_counter: 26675
+page_fault_counter: 68013 (0.971614)
+interrupt_counter: 136896
+write_back_counter: 33760
 
 =====optimal_algorithm=====
-memory_size: 10
-page_fault_counter: 56813 (0.811614)
-write_back_counter: 28327
+page_fault_counter: 56731 (0.810443)
+interrupt_counter: 0
+write_back_counter: 28438
+
+====================
 memory_size: 20
-page_fault_counter: 50132 (0.716171)
-write_back_counter: 24975
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 66062 (0.943743)
+interrupt_counter: 69883
+write_back_counter: 33011
+
+=====own_algorithm=====
+page_fault_counter: 66031 (0.9433)
+interrupt_counter: 133706
+write_back_counter: 32587
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 66041 (0.943443)
+interrupt_counter: 133893
+write_back_counter: 32543
+
+=====optimal_algorithm=====
+page_fault_counter: 50072 (0.715314)
+interrupt_counter: 0
+write_back_counter: 25085
+
+====================
 memory_size: 30
-page_fault_counter: 45294 (0.647057)
-write_back_counter: 22609
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 64038 (0.914829)
+interrupt_counter: 69703
+write_back_counter: 32014
+
+=====own_algorithm=====
+page_fault_counter: 64042 (0.914886)
+interrupt_counter: 130471
+write_back_counter: 31405
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 64016 (0.914514)
+interrupt_counter: 130868
+write_back_counter: 31322
+
+=====optimal_algorithm=====
+page_fault_counter: 45163 (0.645186)
+interrupt_counter: 0
+write_back_counter: 22586
+
+====================
 memory_size: 40
-page_fault_counter: 41322 (0.590314)
-write_back_counter: 20583
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 62031 (0.886157)
+interrupt_counter: 69483
+write_back_counter: 31013
+
+=====own_algorithm=====
+page_fault_counter: 62109 (0.887271)
+interrupt_counter: 127225
+write_back_counter: 30308
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 62132 (0.8876)
+interrupt_counter: 127875
+write_back_counter: 30241
+
+=====optimal_algorithm=====
+page_fault_counter: 41182 (0.588314)
+interrupt_counter: 0
+write_back_counter: 20580
+
+====================
 memory_size: 50
-page_fault_counter: 37919 (0.5417)
-write_back_counter: 18840
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 60076 (0.858229)
+interrupt_counter: 69192
+write_back_counter: 30074
+
+=====own_algorithm=====
+page_fault_counter: 60140 (0.859143)
+interrupt_counter: 123930
+write_back_counter: 29226
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 60098 (0.858543)
+interrupt_counter: 124679
+write_back_counter: 29077
+
+=====optimal_algorithm=====
+page_fault_counter: 37801 (0.540014)
+interrupt_counter: 0
+write_back_counter: 18859
+
+====================
 memory_size: 60
-page_fault_counter: 34942 (0.499171)
-write_back_counter: 17363
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 58125 (0.830357)
+interrupt_counter: 68803
+write_back_counter: 29113
+
+=====own_algorithm=====
+page_fault_counter: 58025 (0.828929)
+interrupt_counter: 120184
+write_back_counter: 28053
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 58049 (0.829271)
+interrupt_counter: 121490
+write_back_counter: 27872
+
+=====optimal_algorithm=====
+page_fault_counter: 34844 (0.497771)
+interrupt_counter: 0
+write_back_counter: 17369
+
+====================
 memory_size: 70
-page_fault_counter: 32314 (0.461629)
-write_back_counter: 16049
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 56000 (0.8)
+interrupt_counter: 68379
+write_back_counter: 28004
+
+=====own_algorithm=====
+page_fault_counter: 55939 (0.799129)
+interrupt_counter: 116504
+write_back_counter: 26922
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 55933 (0.799043)
+interrupt_counter: 118158
+write_back_counter: 26672
+
+=====optimal_algorithm=====
+page_fault_counter: 32183 (0.459757)
+interrupt_counter: 0
+write_back_counter: 16023
 
 =====create_locality_reference_string=====
 
-=====fifo_algorithm=====
+====================
 memory_size: 10
-page_fault_counter: 60069 (0.858129)
-interrupt_counter: 69143
-write_back_counter: 29882
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 60079 (0.858271)
+interrupt_counter: 69187
+write_back_counter: 30115
+
+=====own_algorithm=====
+page_fault_counter: 60041 (0.857729)
+interrupt_counter: 123681
+write_back_counter: 29288
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 60094 (0.858486)
+interrupt_counter: 124438
+write_back_counter: 29149
+
+=====optimal_algorithm=====
+page_fault_counter: 40699 (0.581414)
+interrupt_counter: 0
+write_back_counter: 20355
+
+====================
 memory_size: 20
-page_fault_counter: 50086 (0.715514)
-interrupt_counter: 66372
-write_back_counter: 24960
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 50002 (0.714314)
+interrupt_counter: 66426
+write_back_counter: 25061
+
+=====own_algorithm=====
+page_fault_counter: 50072 (0.715314)
+interrupt_counter: 105860
+write_back_counter: 23855
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 50056 (0.715086)
+interrupt_counter: 108381
+write_back_counter: 23483
+
+=====optimal_algorithm=====
+page_fault_counter: 27413 (0.391614)
+interrupt_counter: 0
+write_back_counter: 13768
+
+====================
 memory_size: 30
-page_fault_counter: 40236 (0.5748)
-interrupt_counter: 61030
-write_back_counter: 20084
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 39998 (0.5714)
+interrupt_counter: 60996
+write_back_counter: 20021
+
+=====own_algorithm=====
+page_fault_counter: 40118 (0.573114)
+interrupt_counter: 86529
+write_back_counter: 18816
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 40018 (0.571686)
+interrupt_counter: 91353
+write_back_counter: 18257
+
+=====optimal_algorithm=====
+page_fault_counter: 18590 (0.265571)
+interrupt_counter: 0
+write_back_counter: 9252
+
+====================
 memory_size: 40
-page_fault_counter: 30371 (0.433871)
-interrupt_counter: 52219
-write_back_counter: 15126
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 30256 (0.432229)
+interrupt_counter: 52246
+write_back_counter: 15137
+
+=====own_algorithm=====
+page_fault_counter: 30191 (0.4313)
+interrupt_counter: 66389
+write_back_counter: 14066
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 30150 (0.430714)
+interrupt_counter: 73535
+write_back_counter: 13412
+
+=====optimal_algorithm=====
+page_fault_counter: 11969 (0.170986)
+interrupt_counter: 0
+write_back_counter: 5935
+
+====================
 memory_size: 50
-page_fault_counter: 20200 (0.288571)
-interrupt_counter: 38516
-write_back_counter: 10082
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 20052 (0.286457)
+interrupt_counter: 38315
+write_back_counter: 10027
+
+=====own_algorithm=====
+page_fault_counter: 20190 (0.288429)
+interrupt_counter: 45430
+write_back_counter: 9312
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 20260 (0.289429)
+interrupt_counter: 54481
+write_back_counter: 8824
+
+=====optimal_algorithm=====
+page_fault_counter: 6896 (0.0985143)
+interrupt_counter: 0
+write_back_counter: 3440
+
+====================
 memory_size: 60
-page_fault_counter: 10298 (0.147114)
-interrupt_counter: 20458
-write_back_counter: 5115
+====================
+
+=====fifo_algorithm=====
+page_fault_counter: 10182 (0.145457)
+interrupt_counter: 20234
+write_back_counter: 5050
+
+=====own_algorithm=====
+page_fault_counter: 10286 (0.146943)
+interrupt_counter: 24104
+write_back_counter: 4651
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 10173 (0.145329)
+interrupt_counter: 34546
+write_back_counter: 4241
+
+=====optimal_algorithm=====
+page_fault_counter: 3007 (0.0429571)
+interrupt_counter: 0
+write_back_counter: 1454
+
+====================
 memory_size: 70
+====================
+
+=====fifo_algorithm=====
 page_fault_counter: 350 (0.005)
 interrupt_counter: 630
 write_back_counter: 140
 
 =====own_algorithm=====
-memory_size: 10
-page_fault_counter: 60102 (0.8586)
-interrupt_counter: 123781
-write_back_counter: 29094
-memory_size: 20
-page_fault_counter: 50144 (0.716343)
-interrupt_counter: 105932
-write_back_counter: 23777
-memory_size: 30
-page_fault_counter: 40088 (0.572686)
-interrupt_counter: 86462
-write_back_counter: 18817
-memory_size: 40
-page_fault_counter: 30448 (0.434971)
-interrupt_counter: 66799
-write_back_counter: 14129
-memory_size: 50
-page_fault_counter: 20321 (0.2903)
-interrupt_counter: 45565
-write_back_counter: 9369
-memory_size: 60
-page_fault_counter: 10322 (0.147457)
-interrupt_counter: 24261
-write_back_counter: 4685
-memory_size: 70
-page_fault_counter: 1034 (0.0147714)
-interrupt_counter: 2114
-write_back_counter: 445
+page_fault_counter: 1109 (0.0158429)
+interrupt_counter: 2276
+write_back_counter: 500
 
 =====enhanced_second_chance_algorithm=====
-memory_size: 10
-page_fault_counter: 60135 (0.859071)
-interrupt_counter: 124435
-write_back_counter: 28939
-memory_size: 20
-page_fault_counter: 50104 (0.715771)
-interrupt_counter: 108470
-write_back_counter: 23321
-memory_size: 30
-page_fault_counter: 40267 (0.575243)
-interrupt_counter: 91736
-write_back_counter: 18305
-memory_size: 40
-page_fault_counter: 30205 (0.4315)
-interrupt_counter: 73731
-write_back_counter: 13425
-memory_size: 50
-page_fault_counter: 20227 (0.288957)
-interrupt_counter: 54539
-write_back_counter: 8814
-memory_size: 60
-page_fault_counter: 10293 (0.147043)
-interrupt_counter: 34615
-write_back_counter: 4336
-memory_size: 70
 page_fault_counter: 350 (0.005)
 interrupt_counter: 630
 write_back_counter: 140
 
 =====optimal_algorithm=====
-memory_size: 10
-page_fault_counter: 40717 (0.581671)
-write_back_counter: 20309
-memory_size: 20
-page_fault_counter: 27448 (0.392114)
-write_back_counter: 13672
-memory_size: 30
-page_fault_counter: 18628 (0.266114)
-write_back_counter: 9354
-memory_size: 40
-page_fault_counter: 12010 (0.171571)
-write_back_counter: 5996
-memory_size: 50
-page_fault_counter: 6950 (0.0992857)
-write_back_counter: 3504
-memory_size: 60
-page_fault_counter: 3048 (0.0435429)
-write_back_counter: 1509
-memory_size: 70
 page_fault_counter: 350 (0.005)
+interrupt_counter: 0
 write_back_counter: 140
 
 =====create_own_reference_string=====
 
-=====fifo_algorithm=====
+====================
 memory_size: 10
+====================
+
+=====fifo_algorithm=====
 page_fault_counter: 70000 (1)
 interrupt_counter: 70000
 write_back_counter: 34995
+
+=====own_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139990
+write_back_counter: 34995
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139990
+write_back_counter: 34995
+
+=====optimal_algorithm=====
+page_fault_counter: 68200 (0.974286)
+interrupt_counter: 0
+write_back_counter: 34095
+
+====================
 memory_size: 20
+====================
+
+=====fifo_algorithm=====
 page_fault_counter: 70000 (1)
 interrupt_counter: 70000
 write_back_counter: 34990
+
+=====own_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139980
+write_back_counter: 34990
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139980
+write_back_counter: 34990
+
+=====optimal_algorithm=====
+page_fault_counter: 66200 (0.945714)
+interrupt_counter: 0
+write_back_counter: 33090
+
+====================
 memory_size: 30
+====================
+
+=====fifo_algorithm=====
 page_fault_counter: 70000 (1)
 interrupt_counter: 70000
 write_back_counter: 34985
+
+=====own_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139990
+write_back_counter: 34980
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139990
+write_back_counter: 34980
+
+=====optimal_algorithm=====
+page_fault_counter: 64200 (0.917143)
+interrupt_counter: 0
+write_back_counter: 32085
+
+====================
 memory_size: 40
+====================
+
+=====fifo_algorithm=====
 page_fault_counter: 70000 (1)
 interrupt_counter: 70000
 write_back_counter: 34980
+
+=====own_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139960
+write_back_counter: 34980
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139960
+write_back_counter: 34980
+
+=====optimal_algorithm=====
+page_fault_counter: 62200 (0.888571)
+interrupt_counter: 0
+write_back_counter: 31080
+
+====================
 memory_size: 50
+====================
+
+=====fifo_algorithm=====
 page_fault_counter: 70000 (1)
 interrupt_counter: 70000
 write_back_counter: 34975
+
+=====own_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139950
+write_back_counter: 34975
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139950
+write_back_counter: 34975
+
+=====optimal_algorithm=====
+page_fault_counter: 60200 (0.86)
+interrupt_counter: 0
+write_back_counter: 30075
+
+====================
 memory_size: 60
+====================
+
+=====fifo_algorithm=====
 page_fault_counter: 70000 (1)
 interrupt_counter: 70000
 write_back_counter: 34970
+
+=====own_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139960
+write_back_counter: 34960
+
+=====enhanced_second_chance_algorithm=====
+page_fault_counter: 70000 (1)
+interrupt_counter: 139960
+write_back_counter: 34960
+
+=====optimal_algorithm=====
+page_fault_counter: 58200 (0.831429)
+interrupt_counter: 0
+write_back_counter: 29070
+
+====================
 memory_size: 70
+====================
+
+=====fifo_algorithm=====
 page_fault_counter: 70000 (1)
 interrupt_counter: 70000
 write_back_counter: 34965
 
 =====own_algorithm=====
-memory_size: 10
-page_fault_counter: 70000 (1)
-interrupt_counter: 139990
-write_back_counter: 34995
-memory_size: 20
-page_fault_counter: 70000 (1)
-interrupt_counter: 139980
-write_back_counter: 34990
-memory_size: 30
-page_fault_counter: 70000 (1)
-interrupt_counter: 139990
-write_back_counter: 34980
-memory_size: 40
-page_fault_counter: 70000 (1)
-interrupt_counter: 139960
-write_back_counter: 34980
-memory_size: 50
-page_fault_counter: 70000 (1)
-interrupt_counter: 139950
-write_back_counter: 34975
-memory_size: 60
-page_fault_counter: 70000 (1)
-interrupt_counter: 139960
-write_back_counter: 34960
-memory_size: 70
 page_fault_counter: 70000 (1)
 interrupt_counter: 139930
 write_back_counter: 34965
 
 =====enhanced_second_chance_algorithm=====
-memory_size: 10
-page_fault_counter: 70000 (1)
-interrupt_counter: 139990
-write_back_counter: 34995
-memory_size: 20
-page_fault_counter: 70000 (1)
-interrupt_counter: 139980
-write_back_counter: 34990
-memory_size: 30
-page_fault_counter: 70000 (1)
-interrupt_counter: 139990
-write_back_counter: 34980
-memory_size: 40
-page_fault_counter: 70000 (1)
-interrupt_counter: 139960
-write_back_counter: 34980
-memory_size: 50
-page_fault_counter: 70000 (1)
-interrupt_counter: 139950
-write_back_counter: 34975
-memory_size: 60
-page_fault_counter: 70000 (1)
-interrupt_counter: 139960
-write_back_counter: 34960
-memory_size: 70
 page_fault_counter: 70000 (1)
 interrupt_counter: 139930
 write_back_counter: 34965
 
 =====optimal_algorithm=====
-memory_size: 10
-page_fault_counter: 68200 (0.974286)
-write_back_counter: 34095
-memory_size: 20
-page_fault_counter: 66200 (0.945714)
-write_back_counter: 33090
-memory_size: 30
-page_fault_counter: 64200 (0.917143)
-write_back_counter: 32085
-memory_size: 40
-page_fault_counter: 62200 (0.888571)
-write_back_counter: 31080
-memory_size: 50
-page_fault_counter: 60200 (0.86)
-write_back_counter: 30075
-memory_size: 60
-page_fault_counter: 58200 (0.831429)
-write_back_counter: 29070
-memory_size: 70
 page_fault_counter: 56200 (0.802857)
+interrupt_counter: 0
 write_back_counter: 28065
