@@ -4,7 +4,7 @@ OBJS = $(SRCS:$(EXT)=.o)
 EXEC = hw1
 CXX = g++
 #CXXFLAGS = -Wall -g -D _DEBUG
-CXXFLAGS = -g
+CXXFLAGS = -std=c++11
 
 all: $(EXEC)
 
