@@ -506,6 +506,8 @@ void own_algorithm(int memory_size)
                             interrupt_counter++;
                             memory_frames[j].reference = 0;
                         }
+                        //interrupt_counter++;
+                        //memory_frames[j].reference = 0;
                     }
                 }
                 
