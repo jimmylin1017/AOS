@@ -1,509 +1,111 @@
 =====create_random_reference_string=====
 
 ====================
-memory_size: 10
+page_fault_counter
+====================
+size	fifo	own	esc	optimal
+10	67956	67940	67935	56637	
+20	65900	65874	65864	49940	
+30	63860	63893	63901	45064	
+40	61837	61822	61802	41111	
+50	59767	59831	59824	37709	
+60	57803	57735	57815	34738	
+70	55759	55754	55682	32070	
 ====================
 
-=====fifo_algorithm=====
-page_fault_counter: 67902 (0.970029)
-interrupt_counter: 69960
-write_back_counter: 34083
-
-=====own_algorithm=====
-page_fault_counter: 67887 (0.969814)
-interrupt_counter: 136699
-write_back_counter: 33853
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 67936 (0.970514)
-interrupt_counter: 136733
-write_back_counter: 33871
-
-=====optimal_algorithm=====
-page_fault_counter: 56737 (0.810529)
-interrupt_counter: 0
-write_back_counter: 28423
-
+interrupt_counter
 ====================
-memory_size: 20
+size	fifo	own	esc	optimal
+10	69961	136804	136804	0	
+20	69852	133528	133651	0	
+30	69679	130289	130647	0	
+40	69468	126774	127318	0	
+50	69143	123282	124263	0	
+60	68779	119692	121052	0	
+70	68269	116184	117719	0	
 ====================
 
-=====fifo_algorithm=====
-page_fault_counter: 65904 (0.941486)
-interrupt_counter: 69863
-write_back_counter: 33055
-
-=====own_algorithm=====
-page_fault_counter: 65895 (0.941357)
-interrupt_counter: 133509
-write_back_counter: 32644
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 65946 (0.942086)
-interrupt_counter: 133705
-write_back_counter: 32660
-
-=====optimal_algorithm=====
-page_fault_counter: 50012 (0.714457)
-interrupt_counter: 0
-write_back_counter: 25031
-
+write_back_counter
 ====================
-memory_size: 30
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 63968 (0.913829)
-interrupt_counter: 69703
-write_back_counter: 32064
-
-=====own_algorithm=====
-page_fault_counter: 63939 (0.913414)
-interrupt_counter: 130319
-write_back_counter: 31480
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 63974 (0.913914)
-interrupt_counter: 130650
-write_back_counter: 31437
-
-=====optimal_algorithm=====
-page_fault_counter: 45069 (0.643843)
-interrupt_counter: 0
-write_back_counter: 22522
-
-====================
-memory_size: 40
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 61907 (0.884386)
-interrupt_counter: 69485
-write_back_counter: 31068
-
-=====own_algorithm=====
-page_fault_counter: 61925 (0.884643)
-interrupt_counter: 126922
-write_back_counter: 30280
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 61938 (0.884829)
-interrupt_counter: 127483
-write_back_counter: 30210
-
-=====optimal_algorithm=====
-page_fault_counter: 41103 (0.587186)
-interrupt_counter: 0
-write_back_counter: 20538
-
-====================
-memory_size: 50
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 59914 (0.855914)
-interrupt_counter: 69202
-write_back_counter: 30066
-
-=====own_algorithm=====
-page_fault_counter: 59946 (0.856371)
-interrupt_counter: 123601
-write_back_counter: 29180
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 59891 (0.855586)
-interrupt_counter: 124336
-write_back_counter: 29039
-
-=====optimal_algorithm=====
-page_fault_counter: 37739 (0.539129)
-interrupt_counter: 0
-write_back_counter: 18880
-
-====================
-memory_size: 60
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 57903 (0.827186)
-interrupt_counter: 68807
-write_back_counter: 29028
-
-=====own_algorithm=====
-page_fault_counter: 57940 (0.827714)
-interrupt_counter: 119982
-write_back_counter: 28037
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 57927 (0.827529)
-interrupt_counter: 121204
-write_back_counter: 27910
-
-=====optimal_algorithm=====
-page_fault_counter: 34763 (0.496614)
-interrupt_counter: 0
-write_back_counter: 17380
-
-====================
-memory_size: 70
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 55966 (0.799514)
-interrupt_counter: 68347
-write_back_counter: 28017
-
-=====own_algorithm=====
-page_fault_counter: 55916 (0.7988)
-interrupt_counter: 116423
-write_back_counter: 26954
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 55878 (0.798257)
-interrupt_counter: 117995
-write_back_counter: 26690
-
-=====optimal_algorithm=====
-page_fault_counter: 32127 (0.458957)
-interrupt_counter: 0
-write_back_counter: 16086
-
+size	fifo	own	esc	optimal
+10	34027	33790	33796	28315	
+20	32976	32529	32499	24954	
+30	31946	31360	31295	22530	
+40	30937	30150	30055	20543	
+50	29890	29041	28900	18813	
+60	28902	27880	27760	17310	
+70	27836	26799	26557	16014	
 =====create_locality_reference_string=====
 
 ====================
-memory_size: 10
+page_fault_counter
+====================
+size	fifo	own	esc	optimal
+10	59995	59976	59895	40620	
+20	49912	49931	49917	27357	
+30	39978	39841	39891	18502	
+40	30051	30002	30156	11926	
+50	19946	20109	20133	6868	
+60	10179	10242	10276	3018	
+70	350	1137	350	350	
 ====================
 
-=====fifo_algorithm=====
-page_fault_counter: 59953 (0.856471)
-interrupt_counter: 69133
-write_back_counter: 29904
-
-=====own_algorithm=====
-page_fault_counter: 59905 (0.855786)
-interrupt_counter: 123370
-write_back_counter: 29101
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 59949 (0.856414)
-interrupt_counter: 124159
-write_back_counter: 28947
-
-=====optimal_algorithm=====
-page_fault_counter: 40516 (0.5788)
-interrupt_counter: 0
-write_back_counter: 20199
-
+interrupt_counter
 ====================
-memory_size: 20
+size	fifo	own	esc	optimal
+10	69133	123486	124115	0	
+20	66293	105482	108079	0	
+30	60914	85922	91051	0	
+40	51925	65894	73476	0	
+50	38128	45176	54423	0	
+60	20233	23930	34565	0	
+70	630	2363	630	0	
 ====================
 
-=====fifo_algorithm=====
-page_fault_counter: 49811 (0.711586)
-interrupt_counter: 66267
-write_back_counter: 24873
-
-=====own_algorithm=====
-page_fault_counter: 49804 (0.711486)
-interrupt_counter: 105273
-write_back_counter: 23680
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 49794 (0.711343)
-interrupt_counter: 108027
-write_back_counter: 23208
-
-=====optimal_algorithm=====
-page_fault_counter: 27283 (0.389757)
-interrupt_counter: 0
-write_back_counter: 13540
-
+write_back_counter
 ====================
-memory_size: 30
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 39830 (0.569)
-interrupt_counter: 60779
-write_back_counter: 19858
-
-=====own_algorithm=====
-page_fault_counter: 39856 (0.569371)
-interrupt_counter: 85930
-write_back_counter: 18655
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 39794 (0.568486)
-interrupt_counter: 90999
-write_back_counter: 17998
-
-=====optimal_algorithm=====
-page_fault_counter: 18435 (0.263357)
-interrupt_counter: 0
-write_back_counter: 9173
-
-====================
-memory_size: 40
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 29762 (0.425171)
-interrupt_counter: 51550
-write_back_counter: 14836
-
-=====own_algorithm=====
-page_fault_counter: 29765 (0.425214)
-interrupt_counter: 65604
-write_back_counter: 13824
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 29825 (0.426071)
-interrupt_counter: 72899
-write_back_counter: 13203
-
-=====optimal_algorithm=====
-page_fault_counter: 11872 (0.1696)
-interrupt_counter: 0
-write_back_counter: 5918
-
-====================
-memory_size: 50
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 20192 (0.288457)
-interrupt_counter: 38394
-write_back_counter: 10035
-
-=====own_algorithm=====
-page_fault_counter: 19881 (0.284014)
-interrupt_counter: 44794
-write_back_counter: 9162
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 20015 (0.285929)
-interrupt_counter: 54028
-write_back_counter: 8648
-
-=====optimal_algorithm=====
-page_fault_counter: 6857 (0.0979571)
-interrupt_counter: 0
-write_back_counter: 3416
-
-====================
-memory_size: 60
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 10074 (0.143914)
-interrupt_counter: 20013
-write_back_counter: 4999
-
-=====own_algorithm=====
-page_fault_counter: 10121 (0.144586)
-interrupt_counter: 23695
-write_back_counter: 4585
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 10172 (0.145314)
-interrupt_counter: 34454
-write_back_counter: 4264
-
-=====optimal_algorithm=====
-page_fault_counter: 3031 (0.0433)
-interrupt_counter: 0
-write_back_counter: 1523
-
-====================
-memory_size: 70
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 350 (0.005)
-interrupt_counter: 630
-write_back_counter: 140
-
-=====own_algorithm=====
-page_fault_counter: 1207 (0.0172429)
-interrupt_counter: 2536
-write_back_counter: 526
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 350 (0.005)
-interrupt_counter: 630
-write_back_counter: 140
-
-=====optimal_algorithm=====
-page_fault_counter: 350 (0.005)
-interrupt_counter: 0
-write_back_counter: 140
-
+size	fifo	own	esc	optimal
+10	30076	29190	29044	20284	
+20	24972	23772	23370	13660	
+30	19980	18765	18096	9249	
+40	15024	13948	13440	5990	
+50	9957	9290	8747	3405	
+60	5044	4639	4324	1472	
+70	140	505	140	140	
 =====create_own_reference_string=====
 
 ====================
-memory_size: 10
+page_fault_counter
+====================
+size	fifo	own	esc	optimal
+10	70000	70000	70000	68200	
+20	70000	70000	70000	66200	
+30	70000	70000	70000	64200	
+40	70000	70000	70000	62200	
+50	70000	70000	70000	60200	
+60	70000	70000	70000	58200	
+70	70000	70000	70000	56200	
 ====================
 
-=====fifo_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 70000
-write_back_counter: 34995
-
-=====own_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139990
-write_back_counter: 34995
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139990
-write_back_counter: 34995
-
-=====optimal_algorithm=====
-page_fault_counter: 68200 (0.974286)
-interrupt_counter: 0
-write_back_counter: 34095
-
+interrupt_counter
 ====================
-memory_size: 20
+size	fifo	own	esc	optimal
+10	70000	139990	139990	0	
+20	70000	139980	139980	0	
+30	70000	139990	139990	0	
+40	70000	139960	139960	0	
+50	70000	139950	139950	0	
+60	70000	139960	139960	0	
+70	70000	139930	139930	0	
 ====================
 
-=====fifo_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 70000
-write_back_counter: 34990
-
-=====own_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139980
-write_back_counter: 34990
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139980
-write_back_counter: 34990
-
-=====optimal_algorithm=====
-page_fault_counter: 66200 (0.945714)
-interrupt_counter: 0
-write_back_counter: 33090
-
+write_back_counter
 ====================
-memory_size: 30
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 70000
-write_back_counter: 34985
-
-=====own_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139990
-write_back_counter: 34980
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139990
-write_back_counter: 34980
-
-=====optimal_algorithm=====
-page_fault_counter: 64200 (0.917143)
-interrupt_counter: 0
-write_back_counter: 32085
-
-====================
-memory_size: 40
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 70000
-write_back_counter: 34980
-
-=====own_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139960
-write_back_counter: 34980
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139960
-write_back_counter: 34980
-
-=====optimal_algorithm=====
-page_fault_counter: 62200 (0.888571)
-interrupt_counter: 0
-write_back_counter: 31080
-
-====================
-memory_size: 50
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 70000
-write_back_counter: 34975
-
-=====own_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139950
-write_back_counter: 34975
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139950
-write_back_counter: 34975
-
-=====optimal_algorithm=====
-page_fault_counter: 60200 (0.86)
-interrupt_counter: 0
-write_back_counter: 30075
-
-====================
-memory_size: 60
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 70000
-write_back_counter: 34970
-
-=====own_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139960
-write_back_counter: 34960
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139960
-write_back_counter: 34960
-
-=====optimal_algorithm=====
-page_fault_counter: 58200 (0.831429)
-interrupt_counter: 0
-write_back_counter: 29070
-
-====================
-memory_size: 70
-====================
-
-=====fifo_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 70000
-write_back_counter: 34965
-
-=====own_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139930
-write_back_counter: 34965
-
-=====enhanced_second_chance_algorithm=====
-page_fault_counter: 70000 (1)
-interrupt_counter: 139930
-write_back_counter: 34965
-
-=====optimal_algorithm=====
-page_fault_counter: 56200 (0.802857)
-interrupt_counter: 0
-write_back_counter: 28065
+size	fifo	own	esc	optimal
+10	34995	34995	34995	34095	
+20	34990	34990	34990	33090	
+30	34985	34980	34980	32085	
+40	34980	34980	34980	31080	
+50	34975	34975	34975	30075	
+60	34970	34960	34960	29070	
+70	34965	34965	34965	28065	

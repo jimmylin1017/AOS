@@ -560,11 +560,8 @@ void own_algorithm(int memory_size)
     print_info[memory_size/10].push_back(p);
 }
 
-int main()
+void print_info_format1()
 {
-    // initialize random seed
-    srand (time(NULL));
-
     // running random reference string
     for(int i=0; i<=7; i++)
         print_info[i].clear();
@@ -576,8 +573,9 @@ int main()
         fifo_algorithm(i*10);
         own_algorithm(i*10);
         enhanced_second_chance_algorithm(i*10);
-        optimal_algorithm(i*10);
+        //optimal_algorithm(i*10);
     }
+
     // print infomation
     for(int i=1; i<=7; i++)
     {
@@ -666,6 +664,228 @@ int main()
             cout<<"write_back_counter: "<<write_back_counter<<endl;
         }
     }
+}
+
+void print_info_format2()
+{
+    // running random reference string
+    for(int i=0; i<=7; i++)
+        print_info[i].clear();
+    create_random_reference_string();
+    cout<<"=====create_random_reference_string=====\n"<<endl;
+    // running algorithm
+    for(int i=1; i<=7; i++)
+    {
+        fifo_algorithm(i*10);
+        own_algorithm(i*10);
+        enhanced_second_chance_algorithm(i*10);
+        optimal_algorithm(i*10);
+    }
+
+    // print infomation
+    cout<<"===================="<<endl;
+    cout<<"page_fault_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int page_fault_counter = print_info[i][j].page_fault_counter;
+
+            cout<<page_fault_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+    
+    cout<<"===================="<<endl;
+    cout<<"\ninterrupt_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int interrupt_counter = print_info[i][j].interrupt_counter;
+
+            cout<<interrupt_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+
+    cout<<"===================="<<endl;
+    cout<<"\nwrite_back_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int write_back_counter = print_info[i][j].write_back_counter;
+
+            cout<<write_back_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+
+    // running random reference string
+    for(int i=0; i<=7; i++)
+        print_info[i].clear();
+    create_locality_reference_string();
+    cout<<"=====create_locality_reference_string=====\n"<<endl;
+    // running algorithm
+    for(int i=1; i<=7; i++)
+    {
+        fifo_algorithm(i*10);
+        own_algorithm(i*10);
+        enhanced_second_chance_algorithm(i*10);
+        optimal_algorithm(i*10);
+    }
+
+    // print infomation
+    cout<<"===================="<<endl;
+    cout<<"page_fault_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int page_fault_counter = print_info[i][j].page_fault_counter;
+
+            cout<<page_fault_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+    
+    cout<<"===================="<<endl;
+    cout<<"\ninterrupt_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int interrupt_counter = print_info[i][j].interrupt_counter;
+
+            cout<<interrupt_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+
+    cout<<"===================="<<endl;
+    cout<<"\nwrite_back_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int write_back_counter = print_info[i][j].write_back_counter;
+
+            cout<<write_back_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+
+    // running random reference string
+    for(int i=0; i<=7; i++)
+        print_info[i].clear();
+    create_own_reference_string();
+    cout<<"=====create_own_reference_string=====\n"<<endl;
+    // running algorithm
+    for(int i=1; i<=7; i++)
+    {
+        fifo_algorithm(i*10);
+        own_algorithm(i*10);
+        enhanced_second_chance_algorithm(i*10);
+        optimal_algorithm(i*10);
+    }
+
+    // print infomation
+    cout<<"===================="<<endl;
+    cout<<"page_fault_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int page_fault_counter = print_info[i][j].page_fault_counter;
+
+            cout<<page_fault_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+    
+    cout<<"===================="<<endl;
+    cout<<"\ninterrupt_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int interrupt_counter = print_info[i][j].interrupt_counter;
+
+            cout<<interrupt_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+
+    cout<<"===================="<<endl;
+    cout<<"\nwrite_back_counter"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"size\tfifo\town\tesc\toptimal"<<endl;
+    for(int i=1; i<=7; i++)
+    {
+        cout<<i*10<<"\t";
+
+        for(int j=0; j<print_info[i].size(); j++)
+        {
+            int write_back_counter = print_info[i][j].write_back_counter;
+
+            cout<<write_back_counter<<"\t";
+        }
+
+        cout<<endl;
+    }
+}
+
+int main()
+{
+
+    // initialize random seed
+    srand (time(NULL));
+
+    print_info_format2();
+
+    
+
 
     // print out reference string
     //create_random_reference_string();
