@@ -81,16 +81,17 @@ int main()
 	cl.ClientCreate();
 	cl.ClientConnect();
 
-	getline(cin, message);
-	cl.WriteString(message);
+	while(getline(cin, message)) {
+		cl.WriteString(message);
+		message = cl.ReadString();
+		cout<<"Receive: "<<message<<endl;
+	}
+	
+	/*cl.WriteString("create homework2.c rwr---");
 	message = cl.ReadString();
 	cout<<"Receive: "<<message<<endl;
 
-	cl.WriteString("create homework2.c rwr---");
-	message = cl.ReadString();
-	cout<<"Receive: "<<message<<endl;
-
-	cin>>message;
+	cin>>message;*/
 
 	return 0;
 }

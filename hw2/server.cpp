@@ -114,6 +114,7 @@ void ClientHandler::CheckUser(string command) {
 	bool check = file_manager.AddUser(username, groupname);
 
 	if(check) {
+		file_manager.UpdateFileUserRight();
 		WriteString("User " + username + "(" + groupname + ") Success!");
 	}
 	else {
@@ -138,10 +139,45 @@ void ClientHandler::ExecuteCommand(string command) {
 		bool check = file_manager.CreateFile(username, filename, rights);
 
 		if(check) {
+			file_manager.UpdateFileUserRight();
 			WriteString("Create File (" + filename + ") Success!");
 		}
 		else {
 			WriteString("Create File (" + filename + ") Failed!");
+		}
+	}
+	else if(operation == "read") {
+
+		bool check = file_manager.ReadFile(username, filename);
+
+		if(check) {
+			WriteString("Read File (" + filename + ") Success!");
+		}
+		else {
+			WriteString("Read File (" + filename + ") Failed!");
+		}
+	}
+	else if(operation == "write") {
+
+		bool check = file_manager.WriteFile(username, filename);
+
+		if(check) {
+			WriteString("Write File (" + filename + ") Success!");
+		}
+		else {
+			WriteString("Write File (" + filename + ") Failed!");
+		}
+	}
+	else if(operation == "modify") {
+
+		bool check = file_manager.ModifyFile(username, filename, rights);
+
+		if(check) {
+			file_manager.UpdateFileUserRight();
+			WriteString("Modify File (" + filename + " " + rights + ") Success!");
+		}
+		else {
+			WriteString("Modify File (" + filename + ") Failed!");
 		}
 	}
 }
