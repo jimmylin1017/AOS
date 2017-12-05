@@ -128,7 +128,7 @@ void ClientHandler::ExecuteCommand(string command) {
 
 	string operation;
 	string filename;
-	string rights;
+	string rights = "rwrw--";
 
 	ss>>operation>>filename>>rights;
 
@@ -151,6 +151,7 @@ void ClientHandler::ExecuteCommand(string command) {
 		bool check = file_manager.ReadFile(username, filename);
 
 		if(check) {
+			file_manager.UpdateFileUserRight();
 			WriteString("Read File (" + filename + ") Success!");
 		}
 		else {
@@ -162,6 +163,7 @@ void ClientHandler::ExecuteCommand(string command) {
 		bool check = file_manager.WriteFile(username, filename);
 
 		if(check) {
+			file_manager.UpdateFileUserRight();
 			WriteString("Write File (" + filename + ") Success!");
 		}
 		else {
@@ -178,6 +180,17 @@ void ClientHandler::ExecuteCommand(string command) {
 		}
 		else {
 			WriteString("Modify File (" + filename + ") Failed!");
+		}
+	}
+	else if(operation == "close") {
+		bool check = file_manager.CloseFile(username, filename);
+
+		if(check) {
+			file_manager.UpdateFileUserRight();
+			WriteString("Close File (" + filename + ") Success!");
+		}
+		else {
+			WriteString("Close File (" + filename + ") Failed!");
 		}
 	}
 }

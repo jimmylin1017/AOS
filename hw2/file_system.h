@@ -13,6 +13,7 @@
 #include <netinet/in.h> //struct sockaddr_in
 
 #include <thread>
+#include <mutex>
 #include <unistd.h>
 
 using namespace std;
@@ -44,6 +45,7 @@ public:
 	bool CreateFile(string username, string filename, string rights);
 	bool ReadFile(string username, string filename);
 	bool WriteFile(string username, string filename);
+	bool CloseFile(string username, string filename);
 	bool ModifyFile(string username, string filename, string rights);
 	void UpdateFileUserRight();
 	void PrintFileUserRight();
@@ -53,8 +55,14 @@ private:
 
 	map<string, string> file_owner; // file -> owner
 	map<string, FileRight> file_rights; // file -> rights
+	map<string, vector<string>> file_is_read; // file -> user who read file
+	map<string, vector<string>> file_is_write; // file -> user who write file
 
 	map<string, vector<string>> group_user; // group -> user
 	map<string, map<string, FileUserRight>> user_rights; // user -> (file -> rights)
 
+	mutex add_user_mutex; // AddUser()
+	mutex create_file_mutex; // CreateFile()
+	mutex modify_file_mutex; // ModifyFile()
+	mutex update_file_user_right_mutex; // UpdateFileUserRight()
 };
